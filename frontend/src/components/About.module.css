@@ -1,0 +1,125 @@
+.aboutGrid {
+  display: grid;
+  grid-template-columns: 360px 1fr;
+  gap: 36px;
+}
+
+.profileCard {
+  padding: 24px;
+}
+
+.profileImageContainer {
+  position: relative;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  margin-bottom: 20px;
+  border: 1px solid var(--border-subtle);
+}
+
+.profileFeatureImg {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  display: block;
+  transition: transform var(--transition-normal);
+}
+
+.profileCard:hover .profileFeatureImg {
+  transform: scale(1.03);
+}
+
+.profileInfoList {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.infoRow {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.88rem;
+  padding-bottom: 8px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.infoLabel {
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+}
+
+.infoValue {
+  color: #f1f5f9;
+  font-weight: 500;
+  text-align: right;
+}
+
+.aboutRight {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.bioBlock {
+  padding: 28px;
+}
+
+.bioHeading {
+  font-size: 1.4rem;
+  margin-bottom: 14px;
+  color: #f8fafc;
+}
+
+.bioText {
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin-bottom: 14px;
+}
+
+.bioText:last-child {
+  margin-bottom: 0;
+}
+
+.highlightsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.highlightCard {
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+}
+
+.highlightIconBox {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+
+.highlightTitle {
+  font-size: 1.05rem;
+  margin-bottom: 8px;
+  color: #f8fafc;
+}
+
+.highlightDesc {
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+@media (max-width: 900px) {
+  .aboutGrid {
+    grid-template-columns: 1fr;
+  }
+  .highlightsGrid {
+    grid-template-columns: 1fr;
+  }
+}

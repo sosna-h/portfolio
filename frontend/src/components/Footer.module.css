@@ -1,0 +1,113 @@
+.footerContainer {
+  background: #080c16;
+  border-top: 1px solid var(--border-subtle);
+  padding: 60px 0 32px;
+  position: relative;
+  z-index: 10;
+}
+
+.footerInner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.footerBrand {
+  font-size: 1.4rem;
+  color: #f8fafc;
+  margin-bottom: 6px;
+}
+
+.footerTagline {
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  margin-bottom: 12px;
+}
+
+.footerStackPill {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--accent-cyan);
+  background: rgba(6, 182, 212, 0.1);
+  border: 1px solid rgba(6, 182, 212, 0.25);
+  padding: 3px 10px;
+  border-radius: var(--radius-full);
+}
+
+.footerRight {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 16px;
+}
+
+.footerSocials {
+  display: flex;
+  gap: 10px;
+}
+
+.footerSocialBtn {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border-subtle);
+  color: #94a3b8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition-fast);
+  text-decoration: none;
+}
+
+.footerSocialBtn:hover {
+  background: var(--gradient-brand);
+  color: #ffffff;
+  transform: translateY(-2px);
+  border-color: transparent;
+}
+
+.scrollTopBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  border: 1px solid var(--border-subtle);
+  color: var(--text-secondary);
+  padding: 6px 14px;
+  border-radius: var(--radius-full);
+  font-size: 0.82rem;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.scrollTopBtn:hover {
+  color: #f8fafc;
+  border-color: var(--border-accent);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.footerBottom {
+  padding-top: 24px;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.footerCrafted {
+  font-family: var(--font-mono);
+}
+
+@media (max-width: 768px) {
+  .footerRight {
+    align-items: flex-start;
+  }
+}

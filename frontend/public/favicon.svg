@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a0f1d" />
+      <stop offset="50%" stop-color="#070a14" />
+      <stop offset="100%" stop-color="#05070c" />
+    </linearGradient>
+
+    <!-- Border Gradient -->
+    <linearGradient id="borderGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00f2fe" />
+      <stop offset="45%" stop-color="#4facfe" />
+      <stop offset="70%" stop-color="#8a2be2" />
+      <stop offset="100%" stop-color="#ff007f" />
+    </linearGradient>
+
+    <!-- Letter S Gradient -->
+    <linearGradient id="sGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="30%" stop-color="#e0f7ff" />
+      <stop offset="70%" stop-color="#00f2fe" />
+      <stop offset="100%" stop-color="#a855f7" />
+    </linearGradient>
+
+    <!-- Bracket Left Gradient -->
+    <linearGradient id="bracketLeft" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00f2fe" />
+      <stop offset="100%" stop-color="#4facfe" />
+    </linearGradient>
+
+    <!-- Bracket Right Gradient -->
+    <linearGradient id="bracketRight" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#c084fc" />
+      <stop offset="100%" stop-color="#f43f5e" />
+    </linearGradient>
+
+    <!-- Glowing Filters -->
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="12" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+
+    <filter id="bracketGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="8" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- Ambient Outer Glow -->
+  <rect x="36" y="36" width="440" height="440" rx="100" fill="none" stroke="url(#borderGrad)" stroke-width="20" opacity="0.3" filter="url(#glow)" />
+
+  <!-- Base Squircle with Dark Theme -->
+  <rect x="40" y="40" width="432" height="432" rx="96" fill="url(#bgGradient)" stroke="url(#borderGrad)" stroke-width="12" />
+
+  <!-- Code Bracket Left: < -->
+  <path d="M 148 180 L 88 256 L 148 332" fill="none" stroke="url(#bracketLeft)" stroke-width="32" stroke-linecap="round" stroke-linejoin="round" filter="url(#bracketGlow)" />
+
+  <!-- Code Bracket Right: > -->
+  <path d="M 364 180 L 424 256 L 364 332" fill="none" stroke="url(#bracketRight)" stroke-width="32" stroke-linecap="round" stroke-linejoin="round" filter="url(#bracketGlow)" />
+
+  <!-- Slash accent / Developer indicator -->
+  <line x1="335" y1="340" x2="355" y2="300" stroke="#f43f5e" stroke-width="16" stroke-linecap="round" opacity="0.8" />
+
+  <!-- Stylized Monogram S -->
+  <g filter="url(#glow)">
+    <text x="256" y="318" 
+          text-anchor="middle" 
+          font-family="'Outfit', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" 
+          font-weight="900" 
+          font-size="210" 
+          fill="url(#sGrad)" 
+          letter-spacing="-4">S</text>
+  </g>
+
+  <!-- Dot indicator (Online / Live Status) -->
+  <circle cx="256" cy="116" r="14" fill="#00f2fe" filter="url(#glow)" />
+  <circle cx="256" cy="116" r="7" fill="#ffffff" />
+</svg>

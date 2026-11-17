@@ -1,0 +1,225 @@
+.mobileToggle {
+  display: none;
+  position: fixed;
+  top: 18px;
+  right: 18px;
+  z-index: 1000;
+  background: #1e293b;
+  border: 1px solid var(--border-subtle);
+  color: #fff;
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+.sidebarBackdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(4px);
+  z-index: 800;
+}
+
+.sidebar {
+  width: var(--sidebar-width);
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #0a0f1d;
+  border-right: 1px solid var(--border-subtle);
+  z-index: 900;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  transition: transform var(--transition-normal);
+}
+
+.sidebarOpen {
+  transform: translateX(0);
+}
+
+.sidebarInner {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 28px 20px;
+}
+
+.profileBlock {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.avatarWrapper {
+  position: relative;
+  width: 110px;
+  height: 110px;
+  margin: 0 auto 16px;
+}
+
+.avatarImg {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid rgba(99, 102, 241, 0.4);
+  box-shadow: 0 4px 20px rgba(99, 102, 241, 0.25);
+}
+
+.statusIndicator {
+  position: absolute;
+  bottom: 4px;
+  right: 4px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 2px solid #0a0f1d;
+}
+
+.statusIndicator.online {
+  background: #10b981;
+  box-shadow: 0 0 10px #10b981;
+}
+
+.statusIndicator.offline {
+  background: #f59e0b;
+}
+
+.profileName {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #f8fafc;
+  margin-bottom: 4px;
+}
+
+.profileTitle {
+  font-size: 0.85rem;
+  color: var(--accent-cyan);
+  font-family: var(--font-mono);
+  margin-bottom: 12px;
+}
+
+.livePill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(15, 23, 42, 0.8);
+  border: 1px solid var(--border-subtle);
+  padding: 4px 12px;
+  border-radius: var(--radius-full);
+  font-size: 0.72rem;
+  font-family: var(--font-mono);
+  color: #cbd5e1;
+  margin-bottom: 16px;
+}
+
+.textEmerald { color: #10b981; }
+.textAmber { color: #f59e0b; }
+
+.socialLinks {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.socialBtn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border-subtle);
+  color: #94a3b8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition-fast);
+  text-decoration: none;
+}
+
+.socialBtn:hover {
+  background: var(--gradient-brand);
+  color: #fff;
+  transform: translateY(-2px);
+  border-color: transparent;
+}
+
+.navMenu {
+  flex: 1;
+  margin-top: 8px;
+}
+
+.navList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.navLink {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 16px;
+  border-radius: var(--radius-sm);
+  background: transparent;
+  border: 1px solid transparent;
+  color: #94a3b8;
+  font-family: var(--font-heading);
+  font-size: 0.92rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  text-align: left;
+}
+
+.navLink:hover {
+  color: #f8fafc;
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.navLink.active {
+  color: #ffffff;
+  background: linear-gradient(90deg, rgba(99, 102, 241, 0.2) 0%, rgba(99, 102, 241, 0.05) 100%);
+  border-color: rgba(99, 102, 241, 0.3);
+  font-weight: 600;
+}
+
+.navLink.active .navIcon {
+  color: var(--accent-cyan);
+}
+
+.navIcon {
+  color: #64748b;
+  transition: color var(--transition-fast);
+}
+
+.sidebarFooter {
+  margin-top: auto;
+  padding-top: 16px;
+  text-align: center;
+  border-top: 1px solid var(--border-subtle);
+}
+
+.techBadge {
+  font-size: 0.7rem;
+  font-family: var(--font-mono);
+  color: #64748b;
+}
+
+@media (max-width: 1024px) {
+  .mobileToggle {
+    display: flex;
+  }
+  .sidebar {
+    transform: translateX(-100%);
+  }
+  .sidebar.sidebarOpen {
+    transform: translateX(0);
+  }
+}

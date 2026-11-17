@@ -1,0 +1,356 @@
+.heroSection {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 80px 48px;
+  overflow: hidden;
+}
+
+.heroFullscreenBg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  opacity: 0;
+  transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 1;
+}
+
+.heroFullscreenBg.visible {
+  opacity: 1;
+}
+
+.heroBackdropGradient {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(9, 13, 22, 0.95) 0%,
+    rgba(9, 13, 22, 0.84) 45%,
+    rgba(9, 13, 22, 0.5) 80%,
+    rgba(9, 13, 22, 0.3) 100%
+  );
+  z-index: 2;
+}
+
+.heroImageSwitcher {
+  position: absolute;
+  top: 24px;
+  right: 32px;
+  z-index: 20;
+  display: flex;
+  gap: 8px;
+  background: rgba(15, 23, 42, 0.88);
+  backdrop-filter: blur(14px);
+  padding: 5px;
+  border-radius: var(--radius-full);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+}
+
+.switcherBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 7px 16px;
+  border-radius: var(--radius-full);
+  background: transparent;
+  border: none;
+  color: #94a3b8;
+  font-family: var(--font-heading);
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.switcherBtn:hover {
+  color: #f8fafc;
+  background: rgba(255, 255, 255, 0.08);
+  transform: translateY(-1px);
+}
+
+.switcherBtn.active {
+  background: var(--gradient-brand);
+  color: #ffffff;
+  box-shadow: 0 4px 14px rgba(99, 102, 241, 0.4);
+}
+
+.switcherIcon {
+  transition: transform 0.25s ease;
+}
+
+.switcherBtn:hover .switcherIcon {
+  transform: scale(1.15);
+}
+
+.heroContentWrapper {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  max-width: 740px;
+}
+
+.heroTextBlock {
+  display: flex;
+  flex-direction: column;
+}
+
+.heroStatusPill {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(15, 23, 42, 0.88);
+  border: 1px solid rgba(99, 102, 241, 0.3);
+  padding: 7px 18px;
+  border-radius: var(--radius-full);
+  font-size: 0.85rem;
+  color: #e2e8f0;
+  margin-bottom: 24px;
+  width: fit-content;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35);
+  animation: pillGlow 3.5s ease-in-out infinite;
+}
+
+@keyframes pillGlow {
+  0%, 100% {
+    border-color: rgba(99, 102, 241, 0.3);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35);
+  }
+  50% {
+    border-color: rgba(56, 189, 248, 0.6);
+    box-shadow: 0 4px 20px rgba(56, 189, 248, 0.3);
+  }
+}
+
+.pulsingBeacon {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #10b981;
+  box-shadow: 0 0 10px #10b981;
+  animation: beaconPulse 1.8s infinite;
+  flex-shrink: 0;
+}
+
+@keyframes beaconPulse {
+  0% {
+    transform: scale(0.9);
+    box-shadow: 0 0 4px #10b981;
+  }
+  50% {
+    transform: scale(1.2);
+    box-shadow: 0 0 12px #10b981, 0 0 18px rgba(16, 185, 129, 0.5);
+  }
+  100% {
+    transform: scale(0.9);
+    box-shadow: 0 0 4px #10b981;
+  }
+}
+
+.pillTextAnimated {
+  font-weight: 600;
+  color: #f1f5f9;
+}
+
+.dbLiveTag {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: rgba(16, 185, 129, 0.2);
+  border: 1px solid rgba(16, 185, 129, 0.45);
+  color: #34d399;
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  font-weight: 600;
+  padding: 2px 9px;
+  border-radius: var(--radius-full);
+  animation: tagShine 3s ease-in-out infinite;
+}
+
+@keyframes tagShine {
+  0%, 100% { opacity: 0.9; }
+  50% { opacity: 1; filter: drop-shadow(0 0 4px #10b981); }
+}
+
+.tagCheckIcon {
+  color: #10b981;
+}
+
+.heroMainTitle {
+  font-size: 4.5rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  margin-bottom: 14px;
+  line-height: 1.08;
+  background: linear-gradient(
+    90deg,
+    #ffffff 0%,
+    #38bdf8 25%,
+    #818cf8 50%,
+    #c084fc 75%,
+    #ffffff 100%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmerTitle 6s linear infinite;
+}
+
+@keyframes shimmerTitle {
+  0% {
+    background-position: 0% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
+}
+
+.heroAnimatedRole {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 1.65rem;
+  font-family: var(--font-mono);
+  font-weight: 600;
+  color: #38bdf8;
+  min-height: 48px;
+  margin-bottom: 20px;
+}
+
+.roleTerminalIcon {
+  color: var(--accent-indigo);
+  flex-shrink: 0;
+  animation: terminalBounce 2s ease-in-out infinite;
+}
+
+@keyframes terminalBounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-3px); }
+}
+
+.roleText {
+  color: #38bdf8;
+  text-shadow: 0 0 18px rgba(56, 189, 248, 0.4);
+}
+
+.blinkingCursor {
+  color: var(--accent-cyan);
+  font-weight: 300;
+  animation: cursorBlink 0.75s step-end infinite;
+}
+
+@keyframes cursorBlink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.heroSummaryText {
+  font-size: 1.15rem;
+  color: #cbd5e1;
+  line-height: 1.7;
+  margin-bottom: 36px;
+  max-width: 630px;
+}
+
+.heroButtonRow {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+}
+
+.btnAnimatedGlow {
+  box-shadow: 0 4px 18px rgba(99, 102, 241, 0.45);
+  animation: glowButton 3s ease-in-out infinite;
+}
+
+@keyframes glowButton {
+  0%, 100% {
+    box-shadow: 0 4px 18px rgba(99, 102, 241, 0.45);
+  }
+  50% {
+    box-shadow: 0 6px 24px rgba(56, 189, 248, 0.65);
+  }
+}
+
+.arrowHoverIcon {
+  transition: transform 0.25s ease;
+}
+
+.heroButtonRow :global(.btn):hover .arrowHoverIcon {
+  transform: translateX(4px);
+}
+
+.heroProjectsBar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  padding-top: 24px;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.projectsBarLabel {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-family: var(--font-mono);
+  color: var(--text-muted);
+}
+
+.projectsBarItems {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.projPill {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: #e2e8f0;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  padding: 5px 14px;
+  border-radius: var(--radius-full);
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.projPill:hover {
+  background: rgba(56, 189, 248, 0.22);
+  border-color: #38bdf8;
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(56, 189, 248, 0.25);
+}
+
+@media (max-width: 768px) {
+  .heroSection {
+    padding: 90px 24px 40px;
+    height: auto;
+    min-height: 100vh;
+  }
+
+  .heroMainTitle {
+    font-size: 3rem;
+  }
+
+  .heroAnimatedRole {
+    font-size: 1.25rem;
+  }
+
+  .heroSummaryText {
+    font-size: 1rem;
+  }
+
+  .heroImageSwitcher {
+    top: 16px;
+    right: 16px;
+  }
+}
